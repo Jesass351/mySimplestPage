@@ -24,10 +24,18 @@ migrate = Migrate(app, db)
 from models import *
 
 from auth import bp as auth_bp, init_login_manager
+from speechkit import bp as speechkit_bp
 
+from translate import bp as translate_bp
+from vision import bp as vision_bp
 
 
 app.register_blueprint(auth_bp)
+app.register_blueprint(translate_bp)
+app.register_blueprint(vision_bp)
+app.register_blueprint(speechkit_bp)
+
+
 
 
 
